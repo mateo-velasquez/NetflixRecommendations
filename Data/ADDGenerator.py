@@ -16,7 +16,7 @@ password = os.getenv('password')
 driver = GraphDatabase.driver(uri, auth=(username, password))
 
 # Definir los IDs de los perfiles y de las películas
-perfil_ids = range(1,416) # El id de los perfiles va desde el 1 al 415 inclusive
+perfil_ids = range(1,5001) # El id de los perfiles va desde el 1 al 415 inclusive
 pelicula_ids = [f's{num}' for num in range(1, 8808)] # El id de las películas va desde el 1 al 8807 inclusive
 
 # Crear relaciones entre perfiles y películas
@@ -44,7 +44,7 @@ def crear_relaciones(session, perfil_ids, pelicula_ids, max_relaciones):
 
 # Ejecutar el bucle para crear relaciones
 with driver.session() as session:
-    crear_relaciones(session, perfil_ids, pelicula_ids, 37000)
+    crear_relaciones(session, perfil_ids, pelicula_ids, 42300) #36814
 
 # Cerrar la conexión al terminar
 driver.close()
