@@ -57,3 +57,4 @@ verificar_ids('CSV-for-Help/profiles_sin_apellido.csv')
 # Llamamos para cargar los apellidos
 agregar_apellido('CSV-for-Help/profiles_sin_apellido.csv')
 
+# ACLARACIÓN: ESTE ARCHIVO SE USÓ ANTES DE PONER LOS HEADERS
