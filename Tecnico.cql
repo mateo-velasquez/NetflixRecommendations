@@ -17,33 +17,6 @@ RETURN COUNT(r) AS Total_Relaciones_ADD; // Nos dio 42283
 // TOP
 "Control Z"
 
-s28,
-s33,
-s34,
-s83,
-s312,
-s339,
-s391,
-s452,
-s575,
-s602,
-s779,
-s6201,
-s1996,
-s1139,
-s1333,
-s1386,
-s1449,
-s1571,
-s1617,
-s2011
-
-
-
-
-
-
-// Algoritmos de centralidad
-
-
-
+MATCH (m:Movie)
+WHERE m.title CONTAINS("Dragon")
+RETURN m.id, m.title;
