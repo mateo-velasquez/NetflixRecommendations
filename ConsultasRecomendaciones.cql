@@ -73,20 +73,26 @@ RETURN m.title AS Movie, m2.title AS RecommendedMovie, r.quantity AS Recommendat
 ORDER BY RecommendationsCount DESC
 LIMIT 5;
 
-//13. Mostrar el top 5 de recomendaciones basadas en directores y peliculas del mismo país
+//13. Mostrar el top 5 de recomendaciones basadas en actores y directores y peliculas del mismo país
+MATCH (m:Movie)-[r:WATCH_TOG_SAME_ACTOR_MOVIE_COUNTRY]->(m2:Movie)
+RETURN m.title AS Movie, m2.title AS RecommendedMovie, r.quantity AS RecommendationsCount
+ORDER BY RecommendationsCount DESC
+LIMIT 5;
+
+//14. Mostrar el top 5 de recomendaciones basadas en directores y peliculas del mismo país
 MATCH (m:Movie)-[r:WATCH_TOG_SAME_DIRECTOR_MOVIE_COUNTRY]->(m2:Movie)
 RETURN m.title AS Movie, m2.title AS RecommendedMovie, r.quantity AS RecommendationsCount
 ORDER BY RecommendationsCount DESC
 LIMIT 5;
 
-//14. Mostrar el top 5 de recomendaciones basadas en actores y directores del mismo país
-MATCH (m:Movie)-[r:WATCH_TOG_SAME_ACTOR_DIRECTOR_COUNTRY]->(m2:Movie)
+//15. Mostrar el top 5 de recomendaciones basadas en películas de cierta categoría por país
+MATCH (m:Movie)-[r:WATCH_TOG_SAME_CATEGORY_COUNTRY]->(m2:Movie)
 RETURN m.title AS Movie, m2.title AS RecommendedMovie, r.quantity AS RecommendationsCount
 ORDER BY RecommendationsCount DESC
 LIMIT 5;
 
-//15. Mostrar el top 5 de recomendaciones basadas en actores y directores y peliculas del mismo país
-MATCH (m:Movie)-[r:WATCH_TOG_SAME_ACTOR_DIRECTOR_MOVIE_COUNTRY]->(m2:Movie)
+//16. Mostrar el top 5 de recomendaciones basadas en directores de peliculas de la misma categoría
+MATCH (m:Movie)-[r:WATCH_TOG_SAME_DIRECTOR_CATEGORY]->(m2:Movie)
 RETURN m.title AS Movie, m2.title AS RecommendedMovie, r.quantity AS RecommendationsCount
 ORDER BY RecommendationsCount DESC
 LIMIT 5;
