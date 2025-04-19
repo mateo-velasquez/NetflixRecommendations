@@ -14,13 +14,13 @@ ORDER BY RecommendationsCount DESC
 LIMIT 5;
 
 //3. Mostrar el top 5 de recomendaciones basadas en país
-MATCH (m:Movie)-[r:WATCH_TOG_SAME_COUNTRY]->(m2:Movie)-[]->(c:Country)
+MATCH (m:Movie)-[r:WATCH_TOG_SAME_COUNTRY]->(m2:Movie)//-[]->(c:Country)
 RETURN m.title AS Movie, m2.title AS RecommendedMovie, r.quantity AS RecommendationsCount
 ORDER BY RecommendationsCount DESC
 LIMIT 5;
 
 //4. Mostrar el top 5 de recomendaciones basadas en país Mexico
-MATCH (m:Movie)-[r:WATCH_TOG_SAME_COUNTRY_MEXICO]->(m2:Movie)-[]->(c:Country)
+MATCH (m:Movie)-[r:WATCH_TOG_SAME_COUNTRY_MEXICO]->(m2:Movie)//-[]->(c:Country)
 RETURN m.title AS Movie, m2.title AS RecommendedMovie, r.quantity AS RecommendationsCount
 ORDER BY RecommendationsCount DESC
 LIMIT 5;
