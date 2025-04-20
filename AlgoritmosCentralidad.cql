@@ -815,6 +815,3 @@ MATCH(m:Movie)
 RETURN m.name AS producto,
     m.pagerankSameReleaseYear AS pageRank
 ORDER BY pageRank DESC;  
-
-
-
